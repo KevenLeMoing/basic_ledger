@@ -20,12 +20,12 @@ class SandBlock:
     def hash_block(self):
         hashing_method = self.get_hashing_method()
         hashing_content = self.get_hashing_content()
-        hashing_method.update(hashing_content)
+        hashing_method.update(hashing_content.encode('utf-8'))
         return hashing_method.hexdigest()
 
     def print_block_info(self):
-        print('Block ID {}'.format(self.block_id))
-        print('Block timestamp {}'.format(self.ts))
-        print('Block content {}'.format(self.content))
-        print('Block hash {}'.format(self.hash))
-        print('Prev block hash {}'.format(self.prev_hash))
+        print('Block ID: {}'.format(self.block_id))
+        print('Block timestamp: {}'.format(self.ts))
+        print('Block content: {}'.format(self.content))
+        print('Block hash: {}'.format(self.hash))
+        print('Prev block hash: {}'.format(self.prev_hash))
