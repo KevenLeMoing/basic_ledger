@@ -10,5 +10,15 @@ class SandBlock:
         self.content = content
         self.hash = self.hash_block()
 
+    @staticmethod
+    def get_hashing_method():
+        return hashlib.sha256()
+
+    def get_hashing_content(self):
+        return str(self.id)+str(self.ts)+str(self.content)+str(self.prev_hash)
+
     def hash_block(self):
-        pass
+        hashing_method = self.get_hashing_method()
+        hashing_content = self.get_hashing_content()
+        hashing_method.update(hashing_content)
+        return hashing_method.hexdigest()
