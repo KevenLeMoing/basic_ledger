@@ -7,9 +7,9 @@ def add_blocks(blockchain) -> SandChain:
         blockchain.get_new_block(blockchain.ledger[i-1])
     return blockchain
 
-#chain = SandChain(10)
-#my_blockchain = add_blocks()
-#my_blockchain.print_chain_info()
+chain = SandChain(10)
+my_blockchain = add_blocks(chain)
+my_blockchain.print_chain_info()
 
-block = SandBlock(block_id=0, prev_hash='', content='This is the first block of my first blockchain')
-block.print_block_info()
+#block = SandBlock(block_id=0, prev_hash='', content='This is the first block of my first blockchain')
+#block.print_block_info()
